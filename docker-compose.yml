@@ -1,0 +1,68 @@
+version: "3.9"
+services:
+  nginx:
+    image: nginx:alpine
+    volumes:
+      - ./infra/nginx.conf:/etc/nginx/nginx.conf:ro
+    ports: ["80:80", "443:443"]
+    depends_on:
+      - web
+      - api
+    restart: always
+
+  web:
+    build:
+      context: ./apps/web
+      dockerfile: Dockerfile
+    # npm 설치 시 peer dependency 충돌로 실패하는 경우가 있어 --legacy-peer-deps 옵션을 사용합니다
+    command: sh -c "npm install --legacy-peer-deps && npm run dev"
+    env_file: .env
+    ports: ["3000:3000"]
+    volumes:
+      - ./apps/web:/app
+      - /app/node_modules
+      - /app/.next
+
+  api:
+    build:
+      context: ./apps/api
+      dockerfile: Dockerfile
+    command: npm run start:dev
+    env_file: .env
+    ports: ["3001:3001"]
+    depends_on: [db, redis]
+    volumes:
+      - ./apps/api:/app
+      - /app/node_modules
+      - /app/dist
+
+  worker-ffmpeg:
+    image: jrottenberg/ffmpeg:6.1-ubuntu
+    volumes:
+      - media:/var/media
+      - ./jobs:/jobs
+
+  packager:
+    image: google/shaka-packager:latest
+    env_file: .env
+    volumes:
+      - media:/var/media
+    # 예: packager 명령을 entrypoint 스크립트로 감싸서 DRM 암호화 수행
+
+  redis:
+    image: redis:7-alpine
+
+  db:
+    image: postgres:15-alpine
+    environment:
+      POSTGRES_USER: app
+      POSTGRES_PASSWORD: app
+      POSTGRES_DB: app
+    volumes:
+      - db_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+
+volumes:
+  media:
+  db_data:

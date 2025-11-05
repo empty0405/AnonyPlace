@@ -1,0 +1,102 @@
+{
+  "appName": "AnonyPlace",
+  "nav": {
+    "home": "Home",
+    "feed": "Feed",
+    "search": "Search",
+    "creators": "Creators",
+    "subscriptions": "Subscriptions",
+    "notifications": "Notifications",
+    "myProfile": "My Profile",
+    "dashboard": "Dashboard",
+    "settings": "Settings",
+    "logout": "Logout",
+    "activity": "Activity"
+  },
+  "auth": {
+    "login": "Login",
+    "loginWithPatreon": "Login with Patreon",
+    "testLogin": "Test Login",
+    "logout": "Logout",
+    "fanAccount": "Fan Account",
+    "creatorAccount": "Creator Account"
+  },
+  "profile": {
+    "posts": "Posts",
+    "media": "Media",
+    "about": "About",
+    "likes": "Likes",
+    "subscribed": "Subscribed",
+    "subscribe": "Subscribe",
+    "uploadVideo": "Upload Video",
+    "noBio": "No bio provided",
+    "noPosts": "No posts yet",
+    "membershipTiers": "Membership Tiers"
+  },
+  "upload": {
+    "title": "Create New Post",
+    "selectFile": "Please select a file",
+    "selectVideo": "Select a video",
+    "maxSize": "Max 500MB",
+    "fileTitle": "Title",
+    "titlePlaceholder": "Enter a title",
+    "description": "Description",
+    "descriptionPlaceholder": "Enter a description (optional)",
+    "visibility": "Visibility",
+    "public": "Public",
+    "subscribersOnly": "Subscribers Only",
+    "submit": "Create Post",
+    "uploading": "Uploading...",
+    "success": "Video uploaded successfully! 🎉",
+    "fileTooLarge": "File is too large! Maximum {{max}}MB allowed.\nCurrent file size: {{current}}MB",
+    "uploadFailed": "Upload failed: {{error}}",
+    "uploadError": "An error occurred during upload."
+  },
+  "post": {
+    "like": "Like",
+    "comment": "Comment",
+    "share": "Share",
+    "comments": "Comments",
+    "writeComment": "Write a comment...",
+    "postComment": "Post Comment",
+    "noComments": "No comments yet",
+    "viewAll": "View All"
+  },
+  "common": {
+    "loading": "Loading...",
+    "error": "Error",
+    "success": "Success",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "save": "Save",
+    "delete": "Delete",
+    "edit": "Edit",
+    "close": "Close",
+    "notFound": "Not Found",
+    "creatorNotFound": "Creator not found",
+    "profile": "Profile"
+  },
+  "settings": {
+    "title": "Settings",
+    "account": "Account",
+    "notifications": "Notifications",
+    "privacy": "Privacy",
+    "language": "Language",
+    "becomeCreator": "Become a Creator",
+    "creatorDescription": "Become a creator and share your content with fans"
+  },
+  "dashboard": {
+    "title": "Creator Dashboard",
+    "profile": "Profile",
+    "tiers": "Tiers",
+    "posts": "Posts",
+    "displayName": "Display Name",
+    "bio": "Bio",
+    "adultContent": "Adult Content",
+    "createProfile": "Create Profile",
+    "updateProfile": "Update Profile",
+    "tierName": "Tier Name",
+    "tierLevel": "Tier Level",
+    "addTier": "Add Tier"
+  }
+}

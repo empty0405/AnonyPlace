@@ -1,0 +1,102 @@
+{
+  "appName": "AnonyPlace",
+  "nav": {
+    "home": "홈",
+    "feed": "피드",
+    "search": "검색",
+    "creators": "크리에이터",
+    "subscriptions": "구독",
+    "notifications": "알림",
+    "myProfile": "내 프로필",
+    "dashboard": "대시보드",
+    "settings": "설정",
+    "logout": "로그아웃",
+    "activity": "활동"
+  },
+  "auth": {
+    "login": "로그인",
+    "loginWithPatreon": "Patreon으로 로그인",
+    "testLogin": "테스트 로그인",
+    "logout": "로그아웃",
+    "fanAccount": "팬 계정",
+    "creatorAccount": "크리에이터 계정"
+  },
+  "profile": {
+    "posts": "포스트",
+    "media": "미디어",
+    "about": "소개",
+    "likes": "좋아요",
+    "subscribed": "구독중",
+    "subscribe": "구독하기",
+    "uploadVideo": "영상 업로드",
+    "noBio": "소개가 없습니다",
+    "noPosts": "아직 포스트가 없습니다",
+    "membershipTiers": "멤버십 등급"
+  },
+  "upload": {
+    "title": "새 포스트 작성",
+    "selectFile": "파일을 선택해주세요",
+    "selectVideo": "영상을 선택하세요",
+    "maxSize": "최대 500MB",
+    "fileTitle": "제목",
+    "titlePlaceholder": "제목을 입력하세요",
+    "description": "설명",
+    "descriptionPlaceholder": "설명을 입력하세요 (선택사항)",
+    "visibility": "공개 범위",
+    "public": "전체 공개",
+    "subscribersOnly": "구독자 전용",
+    "submit": "포스트 작성하기",
+    "uploading": "업로드 중...",
+    "success": "영상이 업로드되었습니다! 🎉",
+    "fileTooLarge": "파일이 너무 큽니다! 최대 {{max}}MB까지 업로드 가능합니다.\n현재 파일 크기: {{current}}MB",
+    "uploadFailed": "업로드 실패: {{error}}",
+    "uploadError": "업로드 중 오류가 발생했습니다."
+  },
+  "post": {
+    "like": "좋아요",
+    "comment": "댓글",
+    "share": "공유",
+    "comments": "댓글",
+    "writeComment": "댓글을 입력하세요...",
+    "postComment": "댓글 작성",
+    "noComments": "아직 댓글이 없습니다",
+    "viewAll": "모두 보기"
+  },
+  "common": {
+    "loading": "로딩중...",
+    "error": "오류",
+    "success": "성공",
+    "cancel": "취소",
+    "confirm": "확인",
+    "save": "저장",
+    "delete": "삭제",
+    "edit": "수정",
+    "close": "닫기",
+    "notFound": "찾을 수 없습니다",
+    "creatorNotFound": "크리에이터를 찾을 수 없습니다",
+    "profile": "프로필"
+  },
+  "settings": {
+    "title": "설정",
+    "account": "계정",
+    "notifications": "알림",
+    "privacy": "프라이버시",
+    "language": "언어",
+    "becomeCreator": "크리에이터 되기",
+    "creatorDescription": "크리에이터가 되어 팬들과 콘텐츠를 공유하세요"
+  },
+  "dashboard": {
+    "title": "크리에이터 대시보드",
+    "profile": "프로필",
+    "tiers": "등급",
+    "posts": "포스트",
+    "displayName": "표시 이름",
+    "bio": "소개",
+    "adultContent": "성인 콘텐츠",
+    "createProfile": "프로필 생성",
+    "updateProfile": "프로필 업데이트",
+    "tierName": "등급 이름",
+    "tierLevel": "등급 레벨",
+    "addTier": "등급 추가"
+  }
+}

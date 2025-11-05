@@ -1,0 +1,102 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  background-color: #000000;
+  color: #ffffff;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+/* Scrollbar Styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #0F0F0F;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #1A1A1A;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #2A2A2A;
+}
+
+/* Line clamp utility */
+.line-clamp-3 {
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* Smooth animations */
+* {
+  transition: color 0.2s ease, background-color 0.2s ease, border-color 0.2s ease;
+}
+
+/* Focus styles */
+input:focus, button:focus {
+  outline: none;
+}
+
+/* Custom button hover effects */
+.btn-primary {
+  @apply bg-primary hover:bg-primary-dark text-white font-semibold py-2 px-6 rounded-full transition-all duration-200 shadow-lg hover:shadow-primary/25;
+}
+
+.btn-secondary {
+  @apply bg-dark-card hover:bg-dark-hover border border-dark-border text-white font-semibold py-2 px-6 rounded-full transition-all duration-200;
+}
+
+/* Card styles */
+.card {
+  @apply bg-dark-card border border-dark-border rounded-xl p-6 hover:border-primary/30 transition-all duration-200;
+}
+
+/* Avatar styles */
+.avatar {
+  @apply w-10 h-10 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center font-semibold text-white;
+}
+
+.avatar-lg {
+  @apply w-16 h-16 rounded-full bg-gradient-to-br from-primary to-purple-500 flex items-center justify-center font-bold text-white text-xl;
+}
+
+/* Input styles */
+.input {
+  @apply bg-dark-hover border border-dark-border rounded-lg py-3 px-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary transition-all duration-200;
+}
+
+/* Navigation active state */
+.nav-active {
+  @apply bg-primary text-white shadow-lg shadow-primary/25;
+}
+
+/* Mobile responsive adjustments */
+@media (max-width: 768px) {
+  .sidebar-hidden {
+    transform: translateX(-100%);
+  }
+  
+  .main-content-full {
+    margin-left: 0;
+  }
+}
