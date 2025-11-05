@@ -2,6 +2,7 @@ import { useAuth } from '../contexts/AuthContext';
 import { useState, useEffect } from 'react';
 import Link from 'next/link';
 import dynamic from 'next/dynamic'
+import { Icons } from './Icons';
 const LanguageSwitcher = dynamic(() => import('./LanguageSwitcher'), { ssr: false })
 
 export default function Header() {
@@ -60,9 +61,7 @@ export default function Header() {
                 placeholder="Search creators, posts..."
                 className="w-full bg-dark-hover border border-dark-border rounded-full py-2 pl-10 pr-4 text-white placeholder-gray-400 focus:outline-none focus:border-primary focus:ring-1 focus:ring-primary"
               />
-              <svg className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
-              </svg>
+              <Icons.Search className="absolute left-3 top-2.5 w-5 h-5 text-gray-400" strokeWidth={2} />
             </div>
           </div>
         )}
@@ -75,24 +74,18 @@ export default function Header() {
               <nav className="hidden md:flex items-center gap-4">
                 {/* Create Post Button */}
                 <button className="p-2 text-gray-400 hover:text-white transition">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                  </svg>
+                  <Icons.Plus className="w-6 h-6" strokeWidth={2} />
                 </button>
 
                 {/* Messages */}
                 <button className="p-2 text-gray-400 hover:text-white transition">
-                  <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                  </svg>
+                  <Icons.Message className="w-6 h-6" strokeWidth={2} />
                 </button>
 
                 {/* Notification Bell */}
                 <Link href="/notifications">
                   <button className="relative p-2 text-gray-400 hover:text-white transition">
-                    <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 17h5l-1.405-1.405A2.032 2.032 0 0118 14.158V11a6.002 6.002 0 00-4-5.659V5a2 2 0 10-4 0v.341C7.67 6.165 6 8.388 6 11v3.159c0 .538-.214 1.055-.595 1.436L4 17h5m6 0v1a3 3 0 11-6 0v-1m6 0H9" />
-                    </svg>
+                    <Icons.Bell className="w-6 h-6" strokeWidth={2} />
                     {unreadCount > 0 && (
                       <span className="absolute -top-1 -right-1 bg-red-600 text-white text-xs rounded-full w-5 h-5 flex items-center justify-center font-bold">
                         {unreadCount > 9 ? '9+' : unreadCount}
@@ -147,9 +140,7 @@ export default function Header() {
                 onClick={() => setMenuOpen(!menuOpen)}
                 className="md:hidden p-2 text-gray-300"
               >
-                <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16M4 18h16" />
-                </svg>
+                <Icons.Menu className="w-6 h-6" strokeWidth={2} />
               </button>
             </>
           ) : (

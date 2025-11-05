@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { withAuth } from '../components/withAuth';
 import { useAuth } from '../contexts/AuthContext';
 import Link from 'next/link';
+import { Icons } from '../components/Icons';
 
 interface Post {
   id: string;
@@ -123,9 +124,7 @@ function FeedPage() {
                       </div>
                       <div className="ml-3 flex items-center">
                         <button onClick={() => setShowComposer(true)} className="bg-primary hover:bg-primary-dark rounded-full p-3 transition">
-                          <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 4v16m8-8H4" />
-                          </svg>
+                          <Icons.Plus className="w-5 h-5" strokeWidth={2} />
                         </button>
                       </div>
                     </>
@@ -174,9 +173,7 @@ function FeedPage() {
                               onClick={() => fileInputRef.current?.click()}
                               className="p-2 rounded-md bg-dark-hover hover:bg-gray-700 transition"
                             >
-                              <svg className="w-5 h-5 text-gray-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15.172 7l-6.586 6.586a2 2 0 102.828 2.828L18 9.828a4 4 0 10-5.657-5.657L6.343 10.17" />
-                              </svg>
+                              <Icons.Paperclip className="w-5 h-5 text-gray-300" strokeWidth={2} />
                             </button>
 
                             <div className="relative">
@@ -185,9 +182,7 @@ function FeedPage() {
                                 onClick={() => setShowTierMenu((s) => !s)}
                                 className="p-2 rounded-md bg-dark-hover hover:bg-gray-700 transition flex items-center gap-2"
                               >
-                                <svg className="w-5 h-5 text-gray-300" viewBox="0 0 24 24" fill="currentColor">
-                                  <path d="M12 2a7 7 0 100 14 7 7 0 000-14z" />
-                                </svg>
+                                <Icons.Globe className="w-5 h-5 text-gray-300" />
                                 <span className="text-sm text-gray-300">{tier}</span>
                               </button>
 
@@ -317,9 +312,7 @@ function FeedPage() {
                         </p>
                       </div>
                       <button className="text-gray-400 hover:text-white p-2">
-                        <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/>
-                        </svg>
+                        <Icons.DotsVertical className="w-5 h-5" />
                       </button>
                     </div>
                   </Link>
@@ -340,9 +333,7 @@ function FeedPage() {
                         // Has assets but no thumbnail: show a subtle media placeholder with play affordance
                         <div className="relative w-full h-64 bg-black flex items-center justify-center">
                           <div className="w-16 h-16 rounded-full bg-black/60 flex items-center justify-center">
-                            <svg className="w-8 h-8 text-white" viewBox="0 0 24 24" fill="currentColor">
-                              <path d="M8 5v14l11-7z" />
-                            </svg>
+                            <Icons.Play className="w-8 h-8 text-white" />
                           </div>
                         </div>
                       ) : (
@@ -364,32 +355,24 @@ function FeedPage() {
                   <div className="px-4 pb-4 flex items-center justify-between">
                     <div className="flex items-center gap-6">
                       <button className="flex items-center gap-2 text-gray-400 hover:text-red-400 transition">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                        </svg>
+                        <Icons.Heart className="w-6 h-6" strokeWidth={2} />
                         <span className="font-semibold">{post._count?.likes || 0}</span>
                       </button>
                       
                       <Link href={`/post/${post.id}`}>
                         <button className="flex items-center gap-2 text-gray-400 hover:text-primary transition">
-                          <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 12h.01M12 12h.01M16 12h.01M21 12c0 4.418-4.03 8-9 8a9.863 9.863 0 01-4.255-.949L3 20l1.395-3.72C3.512 15.042 3 13.574 3 12c0-4.418 4.03-8 9-8s9 3.582 9 8z" />
-                          </svg>
+                          <Icons.Message className="w-6 h-6" strokeWidth={2} />
                           <span className="font-semibold">{post._count?.comments || 0}</span>
                         </button>
                       </Link>
 
                       <button className="flex items-center gap-2 text-gray-400 hover:text-primary transition">
-                        <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8.684 13.342C8.886 12.938 9 12.482 9 12c0-.482-.114-.938-.316-1.342m0 2.684a3 3 0 110-2.684m0 2.684l6.632 3.316m-6.632-6l6.632-3.316m0 0a3 3 0 105.367-2.684 3 3 0 00-5.367 2.684zm0 9.316a3 3 0 105.368 2.684 3 3 0 00-5.368-2.684z" />
-                        </svg>
+                        <Icons.Share className="w-6 h-6" strokeWidth={2} />
                       </button>
                     </div>
 
                     <button className="text-gray-400 hover:text-primary transition">
-                      <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 5a2 2 0 012-2h10a2 2 0 012 2v16l-7-3.5L5 21V5z" />
-                      </svg>
+                      <Icons.Bookmark className="w-6 h-6" strokeWidth={2} />
                     </button>
                   </div>
                 </div>
